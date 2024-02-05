@@ -208,9 +208,6 @@ const HotelChainList: React.FC<HotelChainListProps> = ({
   const [selectedChains, setSelectedChains] = useState<string[]>([]);
   const apiKey = 'c5qHK1vDrsXU7NAcrLLC';
 
-  // const filteredHotels = hotels.filter((hotel) =>
-  //   selectedChains.includes(hotel.chain)
-  // );
 
   const filteredHotels =
   hotels && selectedChains ? hotels.filter((hotel) => selectedChains.includes(hotel.chain)) : [];
