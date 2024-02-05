@@ -6,13 +6,15 @@ import HotelForm from './components/HotelForm';
 import HotelChainForm from './components/HotelChainForm';
 import Home from './components/Home';
 import NavBar from './components/Navbar';
-// import './styles.css';
 
 interface HotelProps {
   name: string;
   city: string;
   country: string;
   address: string;
+  chain: string;
+  latitude: number;
+  longitude: number;
 }
 
 const App: React.FC = () => {
@@ -60,7 +62,7 @@ const App: React.FC = () => {
                 element={
                   <>
                     <HotelChainForm addChain={addChain} />
-                    <HotelChainList chains={chains} />
+                    <HotelChainList allChains={chains} hotels={hotels}/>
                   </>
                 }
               />

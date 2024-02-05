@@ -7,8 +7,8 @@ export interface HotelProps {
   country: string;
   address: string;
   chain: string;
-  latitude: number
-  longitude: number
+  latitude: number;
+  longitude: number;
 }
 
 interface HotelListProps {

@@ -208,9 +208,10 @@ const HotelChainList: React.FC<HotelChainListProps> = ({
   const [selectedChains, setSelectedChains] = useState<string[]>([]);
   const apiKey = 'c5qHK1vDrsXU7NAcrLLC';
 
-
   const filteredHotels =
-  hotels && selectedChains ? hotels.filter((hotel) => selectedChains.includes(hotel.chain)) : [];
+    hotels && selectedChains
+      ? hotels.filter((hotel) => selectedChains.includes(hotel.chain))
+      : [];
 
   const handleChainFilterChange = (chain: string) => {
     if (selectedChains.includes(chain)) {
@@ -243,9 +244,9 @@ const HotelChainList: React.FC<HotelChainListProps> = ({
       <div className="map-wrap mt-4">
         <InteractiveMap
           mapboxAccessToken={apiKey}
-          latitude={0} // Set initial latitude
-          longitude={0} // Set initial longitude
-          zoom={1} // Set initial zoom
+          latitude={0}
+          longitude={0}
+          zoom={1}
         >
           {filteredHotels?.map((hotel, index) => (
             <Marker

@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
 import PrimaryButton from '../shared/Button';
-
-interface HotelProps {
-  name: string;
-  city: string;
-  country: string;
-  address: string;
-  chain: string;
-}
+import { HotelProps } from './HotelList';
 
 interface HotelFormProps {
   addHotel: (newHotel: HotelProps) => void;
@@ -19,7 +12,9 @@ const HotelForm: React.FC<HotelFormProps> = ({ addHotel }) => {
     city: '',
     country: '',
     address: '',
-    chain: ''
+    chain: '',
+    latitude: 0,
+    longitude: 0,
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -37,6 +32,8 @@ const HotelForm: React.FC<HotelFormProps> = ({ addHotel }) => {
       country: '',
       address: '',
       chain: '',
+      latitude: 0,
+      longitude: 0,
     });
   };
 
